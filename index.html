@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js-examples</title>
+</head>
+<body>
+    <script>
+// function that adds 7 to input
+// function add_7(){
+//     let input_number = +prompt("Please enter the number that will be added 7");
+//     input_number += 7;
+//     alert(input_number)
+
+// }
+   
+// add_7(); 
+    // function multiply() {
+    //     let firstNumber = +prompt("Enter first product");
+    //     let secondNumber = +prompt("Enter second product");
+    //     alert("The product of entered numbers is " + firstNumber*secondNumber);
+    // }
+    // multiply();
+    // function capitalize() {
+    //     let originalString = prompt("Enter your quote:");
+    //     // let letterToCapitalize = originalString.substr(0,1);
+    //     // letterToCapitalize = letterToCapitalize.toUpperCase();
+        
+    //     let newString = originalString.substr(1);
+    //     let letterToCapitalize_newString = letterToCapitalize + newString;
+    //     alert(letterToCapitalize_newString);
+    // }
+    // capitalize();
+
+    // function lastLetter(){
+    //     let quote = prompt("Enter your quote:")
+    //     alert("The last letter is " + quote.slice(-1))
+    // }
+    // lastLetter();
+       
+        
+
+        //0=rock, 1= paper, 2=scissor
+        // const playerSelection = prompt("Choose: Rock, paper or scissor!")
+        // let x = Math.floor(Math.random() * 3);
+        // function playRound (){
+        //     if (x=0 && playerSelection.toLowerCase() == "rock"){
+        //         alert("It's a tie, computer algo chose rock")
+
+        //     }
+
+        // }
+
+//Returns the computer selection randomly
+        function computerPlay() {
+            let x = Math.floor(Math.random() * 2);
+            if (x==0){
+                return "rock"; 
+
+            } else if(x==1){
+
+                return "paper";
+
+            } else{
+
+                return "scissor";
+                
+            }
+        }
+  
+        
+//Returns a string informing the result of the round. Also increments counter if someone wins.
+        function playRound(playerSelection, computerplay,) {
+
+            if(playerSelection == computerplay){
+              
+                return "It's a tie, both chose " + computerplay;
+            }else if(playerSelection == "scissor" && computerplay == "paper" || playerSelection =="paper" && computerplay =="rock" || playerSelection == "rock" && computerplay=="scissor"){
+                ++playerCounter;
+                return "Player wins, computer chose " + computerplay + ", human chose " + playerSelection;
+            } else{ 
+                ++computerCounter;
+                return "Computer wins, computer chose " + computerplay + ", human chose " + playerSelection;
+            }
+        }
+   
+
+    //calls the functions and informs how many rounds each participant won
+    let computerCounter = 0;
+    let playerCounter= 0;
+    for (let i=0;i<5;i++){
+
+        const playerSelection = prompt("Choose rock, paper or scissor.").toLowerCase();
+        const computerplay = computerPlay();
+        console.log(playRound(playerSelection, computerplay));
+        }
+    console.log("player counter " + playerCounter);
+    console.log("computer counter " + computerCounter );
+    </script>
+
+</body>
+</html>
